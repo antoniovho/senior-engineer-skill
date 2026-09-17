@@ -1,0 +1,80 @@
+import { defineConfig } from "vitepress";
+import { withMermaid } from "vitepress-plugin-mermaid";
+
+export default withMermaid(
+  defineConfig({
+    title: "{{PROJECT_NAME}}",
+    description: "{{PROJECT_DESCRIPTION}}",
+    appearance: "dark",
+    base: "{{BASE}}",
+    ignoreDeadLinks: true,
+
+    head: [
+      ["link", { rel: "preconnect", href: "https://fonts.googleapis.com" }],
+      [
+        "link",
+        { rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: "" },
+      ],
+      [
+        "link",
+        {
+          rel: "stylesheet",
+          href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap",
+        },
+      ],
+    ],
+
+    markdown: {
+      lineNumbers: true,
+    },
+
+    themeConfig: {
+      logo: "/logo.svg",
+      outline: { level: [2, 3] },
+
+      nav: [
+        { text: "Explanation", link: "/explanation/architecture" },
+        { text: "Reference", link: "/reference/api" },
+        { text: "How-to", link: "/how-to/extend" },
+        { text: "Tutorial", link: "/tutorial/setup" },
+        { text: "GitHub", link: "{{GITHUB_URL}}" },
+      ],
+
+      sidebar: [
+        {{SIDEBAR}}
+      ],
+
+      socialLinks: [{ icon: "github", link: "{{GITHUB_URL}}" }],
+    },
+
+    mermaid: {
+      theme: "dark",
+      themeVariables: {
+        darkMode: true,
+        background: "#0d1117",
+        primaryColor: "#2d333b",
+        primaryTextColor: "#e6edf3",
+        primaryBorderColor: "#6d5dfc",
+        secondaryColor: "#1c2333",
+        tertiaryColor: "#161b22",
+        lineColor: "#8b949e",
+        textColor: "#e6edf3",
+        mainBkg: "#2d333b",
+        nodeBkg: "#2d333b",
+        nodeBorder: "#6d5dfc",
+        clusterBkg: "#161b22",
+        clusterBorder: "#30363d",
+        titleColor: "#e6edf3",
+        edgeLabelBackground: "#1c2333",
+        nodeTextColor: "#e6edf3",
+        actorTextColor: "#e6edf3",
+        actorBkg: "#2d333b",
+        actorBorder: "#6d5dfc",
+        signalColor: "#8b949e",
+        noteBkgColor: "#161b22",
+        noteBorderColor: "#30363d",
+        noteTextColor: "#e6edf3",
+      },
+    },
+  })
+);

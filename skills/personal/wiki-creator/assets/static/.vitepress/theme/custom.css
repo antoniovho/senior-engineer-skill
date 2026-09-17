@@ -1,0 +1,119 @@
+/* ===== Dark Theme Palette ===== */
+:root {
+  --dark-bg: #0d1117;
+  --dark-surface: #161b22;
+  --dark-card: #2d333b;
+  --dark-border: #30363d;
+  --dark-accent: #6d5dfc;
+  --dark-accent-soft: #6d5dfc33;
+  --dark-text: #e6edf3;
+  --dark-text-muted: #8b949e;
+  --dark-secondary: #1c2333;
+}
+
+/* ===== VitePress Dark Mode Overrides ===== */
+.dark {
+  --vp-c-bg: var(--dark-bg);
+  --vp-c-bg-soft: var(--dark-surface);
+  --vp-c-bg-mute: var(--dark-card);
+  --vp-c-border: var(--dark-border);
+  --vp-c-divider: var(--dark-border);
+  --vp-c-text-1: var(--dark-text);
+  --vp-c-text-2: var(--dark-text-muted);
+  --vp-c-brand-1: var(--dark-accent);
+  --vp-c-brand-2: var(--dark-accent);
+  --vp-c-brand-soft: var(--dark-accent-soft);
+  --vp-code-block-bg: var(--dark-surface);
+  --vp-code-line-highlight-color: rgba(109, 93, 252, 0.1);
+}
+
+/* ===== Mermaid Click-to-Zoom Cursor ===== */
+.mermaid {
+  cursor: zoom-in;
+  transition: opacity 0.2s ease;
+}
+
+.mermaid:hover {
+  opacity: 0.9;
+}
+
+/* ===== Mermaid Zoom Overlay ===== */
+.mermaid-zoom-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(13, 17, 23, 0.95);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.mermaid-zoom-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.mermaid-zoom-viewport {
+  width: 90vw;
+  height: 85vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
+  position: relative;
+}
+
+.mermaid-zoom-viewport:active {
+  cursor: grabbing;
+}
+
+.mermaid-zoom-viewport svg {
+  max-width: none;
+  max-height: none;
+  transition: transform 0.1s ease;
+}
+
+.mermaid-zoom-controls {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  padding: 8px 16px;
+  background: var(--dark-card);
+  border: 1px solid var(--dark-border);
+  border-radius: 8px;
+  z-index: 10000;
+}
+
+.mermaid-zoom-btn {
+  background: var(--dark-surface);
+  border: 1px solid var(--dark-border);
+  color: var(--dark-text);
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.mermaid-zoom-btn:hover {
+  background: var(--dark-accent);
+  border-color: var(--dark-accent);
+}
+
+.mermaid-zoom-hint {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  color: var(--dark-text-muted);
+  font-size: 12px;
+  font-family: 'Inter', sans-serif;
+}
