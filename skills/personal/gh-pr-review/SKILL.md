@@ -157,7 +157,7 @@ Call `github_add_comment_to_pending_review` with:
 - `owner`: "inditex"
 - `repo`: "mic-ghcajava"
 - `pullNumber`: 62
-- `path`: "code/src/test/java/com/inditex/ghcajava/SumTest.java"
+- `path`: "code/test/java/com/inditex/ghcajava/SumTest.java"
 - `line`: 5
 - `side`: "RIGHT"
 - `subjectType`: "LINE"
